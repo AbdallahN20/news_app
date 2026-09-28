@@ -7,7 +7,6 @@ class Api {
   static const String _endpoint = '/v2/everything';
   static const String _apiKey = '7fe358c9c7b645378246612676f839b6';
 
-  // جلب المقالات مع إمكانية تحديد موضوع البحث
   static Future<NewsModel> getArticles({String query = 'bitcoin'}) async {
     final queryParameters = {
       'q': query,
@@ -32,7 +31,7 @@ class Api {
     } else {
       final Map<String, dynamic> errorBody = jsonDecode(response.body);
       throw Exception(
-        errorBody['message'] ?? 'فشل تحميل الأخبار (كود ${response.statusCode})',
+        errorBody['message'] ?? 'Failed to load news ${response.statusCode}',
       );
     }
   }

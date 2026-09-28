@@ -66,7 +66,7 @@ class _HomeScreenContent extends StatelessWidget {
                       ),
                       onPressed: () => NewsCubit.get(context).fetchNews(),
                       child: const Text(
-                        'إعادة المحاولة',
+                        'Retry',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
